@@ -29,13 +29,8 @@ case "$1" in
     echo "Status  cephprob daemon" 
     $PYTHONBIN /opt/inkscope/bin/cephprobe.py status
     ;;
-  nodaemon)
-    echo "Starting cephprob nodaemon"
-    $PYTHONBIN /opt/inkscope/bin/cephprobe.py nodaemon
-    RETVAL=$?
-    ;;
   *)
-    echo "Usage: /etc/init.d/cephprob {start|stop|restart|status|nodaemon}"
+    echo "Usage: /etc/init.d/cephprob {start|stop|restart|status}"
     exit 1
     ;;
 esac

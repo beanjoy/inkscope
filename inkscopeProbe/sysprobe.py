@@ -634,7 +634,7 @@ class SysProbeDaemon(Daemon):
         Daemon.__init__(self, pidfile, stdout=logfile, stderr=logfile)
         
     def run(self):
-        self.start_probe()
+        start_probe()
 
     @staticmethod
     def start_probe():
@@ -846,6 +846,7 @@ class SysProbeDaemon(Daemon):
         
         print str(datetime.datetime.now())
         print "SysProbe stopped"
+   
 
 if __name__ == "__main__":   
     ensure_dir(logfile)
@@ -867,5 +868,5 @@ if __name__ == "__main__":
             sys.exit(2)
         sys.exit(0)
     else:
-        print "usage: %s start|stop|restart|status|nodaemon" % sys.argv[0]
+        print "usage: %s start|stop|restart|status" % sys.argv[0]
         sys.exit(2)
